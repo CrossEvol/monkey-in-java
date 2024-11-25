@@ -51,7 +51,7 @@ public enum TokenType {
         this.literal = literal;
     }
 
-    public String getLiteral() {
+    public String literal() {
         return literal;
     }
 }
