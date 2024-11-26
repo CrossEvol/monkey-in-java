@@ -14,6 +14,10 @@ public class Program implements Node {
         this.statements = statements;
     }
 
+    public List<Statement> getStatements() {
+        return statements;
+    }
+
     @Override
     public String tokenLiteral() {
         if (statements.isEmpty()) {

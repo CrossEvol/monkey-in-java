@@ -1,5 +1,7 @@
 package org.monkey.token;
 
+import java.util.StringJoiner;
+
 public enum TokenType {
     // Special tokens
     ILLEGAL("ILLEGAL"),
@@ -53,5 +55,10 @@ public enum TokenType {
 
     public String literal() {
         return literal;
+    }
+
+    @Override
+    public String toString() {
+        return this.literal();
     }
 }

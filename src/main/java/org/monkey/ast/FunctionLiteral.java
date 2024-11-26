@@ -5,7 +5,7 @@ import org.monkey.token.Token;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public record FunctionalLiteral(Token token, List<Identifier> parameters, BlockStatement body) implements Expression {
+public record FunctionLiteral(Token token, List<Identifier> parameters, BlockStatement body) implements Expression {
     @Override
     public String tokenLiteral() {
         return this.token.literal();
