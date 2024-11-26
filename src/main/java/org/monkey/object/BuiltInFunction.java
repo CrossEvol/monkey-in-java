@@ -1,5 +1,5 @@
 package org.monkey.object;
 
-public interface BuiltinFunction {
+public interface BuiltInFunction {
     public Object call(Object... args);
 }

@@ -1,6 +1,6 @@
 package org.monkey.object;
 
-public record Builtin() implements Object {
+public record BuiltIn(BuiltInFunction fn) implements Object {
     @Override
     public ObjectType type() {
         return ObjectType.BUILTIN_OBJ;

@@ -4,6 +4,7 @@ import org.monkey.common.Tuple;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Environment {
     private final Map<java.lang.String, Object> store;
@@ -23,12 +24,12 @@ public class Environment {
         var object = this.store.get(name);
         if (object == null && outer != null) {
             var tuple = this.outer.get(name);
-            if (tuple.first() != null) {
-                return new Tuple<>(tuple.first(), true);
+            if (tuple.value() != null) {
+                return new Tuple<>(tuple.value(), true);
             }
             return new Tuple<>(null, false);
         }
-        return new Tuple<>(object, true);
+        return new Tuple<>(object, !Objects.isNull(object));
     }
 
 

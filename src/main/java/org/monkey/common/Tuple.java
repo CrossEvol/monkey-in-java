@@ -1,4 +1,4 @@
 package org.monkey.common;
 
-public record Tuple<T,V>(T first, V second) {
+public record Tuple<V, B>(V value, B ok) {
 }

@@ -6,7 +6,7 @@ import org.monkey.ast.Identifier;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public record Function(List<Identifier> parameters, List<BlockStatement> body, Environment env) implements Object {
+public record Function(List<Identifier> parameters, BlockStatement body, Environment env) implements Object {
     @Override
     public ObjectType type() {
         return ObjectType.FUNCTION_OBJ;
@@ -19,7 +19,7 @@ public record Function(List<Identifier> parameters, List<BlockStatement> body, E
         sb.append("(");
         sb.append(parameters.stream().map(Identifier::string).collect(Collectors.joining(", ")));
         sb.append(") {\n");
-        body.stream().map(BlockStatement::string).forEach(sb::append);
+        sb.append(body.string());
         sb.append("\n}");
         return sb.toString();
     }

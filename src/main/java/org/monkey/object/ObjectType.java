@@ -1,5 +1,7 @@
 package org.monkey.object;
 
+import java.util.StringJoiner;
+
 public enum ObjectType {
     NULL_OBJ("NULL"),
     ERROR_OBJ("ERROR"),
@@ -21,4 +23,5 @@ public enum ObjectType {
     public java.lang.String value() {
         return value;
     }
+
 }
